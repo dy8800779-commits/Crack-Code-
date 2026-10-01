@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Crack The Code | Dipesh Yadav</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Background Decoration -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <!-- ================= GAME ================= -->
+
+    <main class="game-container">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="game-header">
+
+            <div class="lock-icon">
+                🔐
+            </div>
+
+            <h1>
+                CRACK THE CODE
+            </h1>
+
+            <p class="subtitle">
+                Can you break the secret 3-digit code?
+            </p>
+
+        </header>
+
+
+        <!-- ================= DIFFICULTY ================= -->
+
+        <section class="difficulty-section">
+
+            <p class="section-label">
+                SELECT DIFFICULTY
+            </p>
+
+            <div class="difficulty">
+
+                <button
+                    class="difficulty-btn active easy"
+                    id="easyBtn"
+                    type="button"
+                >
+                    <span>🟢</span>
+                    EASY
+                </button>
+
+                <button
+                    class="difficulty-btn medium"
+                    id="mediumBtn"
+                    type="button"
+                >
+                    <span>🟡</span>
+                    MEDIUM
+                </button>
+
+                <button
+                    class="difficulty-btn hard"
+                    id="hardBtn"
+                    type="button"
+                >
+                    <span>🔴</span>
+                    HARD
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= GAME STATUS ================= -->
+
+        <section class="status-grid">
+
+            <!-- Timer -->
+
+            <div class="status-card timer-card">
+
+                <div class="status-icon">
+                    ⏱️
+                </div>
+
+                <div>
+
+                    <p>
+                        TIME
+                    </p>
+
+                    <strong id="timeDisplay">
+                        15
+                    </strong>
+
+                    <small>
+                        seconds
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Attempts -->
+
+            <div class="status-card attempt-card">
+
+                <div class="status-icon">
+                    🎯
+                </div>
+
+                <div>
+
+                    <p>
+                        ATTEMPTS
+                    </p>
+
+                    <strong id="attemptDisplay">
+                        10
+                    </strong>
+
+                    <small>
+                        remaining
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TIMER ================= -->
+
+        <div class="timer-wrapper">
+
+            <div class="timer-bar">
+
+                <div
+                    class="timer-progress"
+                    id="timerProgress"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= CODE INPUT ================= -->
+
+        <section class="code-section">
+
+            <p class="section-label">
+                ENTER YOUR 3-DIGIT GUESS
+            </p>
+
+
+            <div class="code-input">
+
+                <input
+                    type="text"
+                    id="digit1"
+                    maxlength="1"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    aria-label="First digit"
+                >
+
+                <span class="input-separator">
+                    •
+                </span>
+
+                <input
+                    type="text"
+                    id="digit2"
+                    maxlength="1"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    aria-label="Second digit"
+                >
+
+                <span class="input-separator">
+                    •
+                </span>
+
+                <input
+                    type="text"
+                    id="digit3"
+                    maxlength="1"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    aria-label="Third digit"
+                >
+
+            </div>
+
+
+            <!-- Crack Button -->
+
+            <button
+                class="crack-btn"
+                id="crackBtn"
+                type="button"
+            >
+
+                <span class="button-icon">
+                    🔓
+                </span>
+
+                CRACK CODE
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= HINT ================= -->
+
+        <section class="hint-panel">
+
+            <div class="hint-header">
+
+                <span class="hint-icon">
+                    💡
+                </span>
+
+                <div>
+
+                    <h2>
+                        CODE ANALYSIS
+                    </h2>
+
+                    <p>
+                        Use the clues to crack the code
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="hint-results">
+
+                <!-- Correct Position -->
+
+                <div class="hint-result green-result">
+
+                    <div class="result-symbol">
+                        🟩
+                    </div>
+
+                    <div>
+
+                        <span>
+                            CORRECT POSITION
+                        </span>
+
+                        <strong id="correctPosition">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Correct Digit -->
+
+                <div class="hint-result yellow-result">
+
+                    <div class="result-symbol">
+                        🟨
+                    </div>
+
+                    <div>
+
+                        <span>
+                            CORRECT DIGIT
+                        </span>
+
+                        <strong id="correctDigit">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Analysis Message -->
+
+            <div
+                class="analysis-message"
+                id="analysisMessage"
+            >
+                Enter your guess to receive a clue.
+            </div>
+
+        </section>
+
+
+        <!-- ================= GAME MESSAGE ================= -->
+
+        <div
+            class="game-message"
+            id="gameMessage"
+        ></div>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <span>
+                🔐 SECRET CODE SYSTEM
+            </span>
+
+            <span>
+                •
+            </span>
+
+            <span>
+                3 DIGITS
+            </span>
+
+            <span>
+                •
+            </span>
+
+            <span class="creator">
+                Created by Dipesh Yadav
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- ================= MODAL ================= -->
+
+    <div
+        class="modal-overlay"
+        id="gameModal"
+    >
+
+        <div class="result-modal">
+
+            <div
+                class="result-icon"
+                id="resultIcon"
+            >
+                🏆
+            </div>
+
+
+            <h2 id="resultTitle">
+                YOU CRACKED IT!
+            </h2>
+
+
+            <p id="resultText">
+                Congratulations!
+            </p>
+
+
+            <div class="secret-display">
+
+                <span>
+                    SECRET CODE
+                </span>
+
+                <strong id="secretDisplay">
+                    000
+                </strong>
+
+            </div>
+
+
+            <button
+                class="play-again-btn"
+                id="playAgainBtn"
+                type="button"
+            >
+                🔄 PLAY AGAIN
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

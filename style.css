@@ -1,0 +1,1523 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+/* =========================================================
+   CRACK THE CODE — PROFESSIONAL UI
+   Light Maroon / Premium Security Theme
+   Responsive: Desktop + Laptop + Tablet + Mobile
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f4eeee;
+    --surface: #ffffff;
+    --surface-2: #faf6f7;
+    --surface-3: #f6edef;
+
+    --maroon-900: #421b24;
+    --maroon-800: #57212d;
+    --maroon-700: #6f2938;
+    --maroon-600: #843747;
+    --maroon-500: #9d4a59;
+    --maroon-400: #bd6a77;
+
+    --maroon-soft: #f3e3e6;
+    --maroon-border: #e5cbd0;
+
+    --text: #24171b;
+    --text-2: #634d53;
+    --muted: #8d797e;
+
+    --green: #37825c;
+    --green-soft: #e7f3eb;
+
+    --yellow: #b37a27;
+    --yellow-soft: #faf1df;
+
+    --red: #b34858;
+    --red-soft: #f8e6e9;
+
+    --border: #eadcdf;
+
+    --shadow-sm:
+        0 4px 15px rgba(66, 27, 36, 0.06);
+
+    --shadow-md:
+        0 12px 35px rgba(66, 27, 36, 0.09);
+
+    --shadow-lg:
+        0 25px 70px rgba(66, 27, 36, 0.13);
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(157, 74, 89, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 100% 100%,
+            rgba(111, 41, 56, 0.08),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family: "DM Sans", sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 28px;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND
+   ========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(111, 41, 56, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(111, 41, 56, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.7),
+        transparent 80%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+   ========================================================= */
+
+.background-glow {
+    position: fixed;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(100px);
+
+    opacity: 0.12;
+
+    z-index: 0;
+}
+
+.glow-one {
+    width: 280px;
+    height: 280px;
+
+    background: var(--maroon-400);
+
+    top: -130px;
+    left: -100px;
+}
+
+.glow-two {
+    width: 280px;
+    height: 280px;
+
+    background: var(--maroon-700);
+
+    bottom: -130px;
+    right: -100px;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.game-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(1240px, 100%);
+
+    min-height: calc(100vh - 56px);
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 1px solid var(--border);
+
+    border-radius: 28px;
+
+    box-shadow: var(--shadow-lg);
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.game-header {
+    padding: 26px 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fbf6f7
+        );
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   LOCK ICON
+   ========================================================= */
+
+.lock-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+
+    background: var(--maroon-soft);
+
+    border: 1px solid var(--maroon-border);
+
+    font-size: 25px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   HEADER TITLE
+   ========================================================= */
+
+.game-header h1 {
+    margin-top: 12px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(27px, 3vw, 40px);
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    color: var(--maroon-800);
+}
+
+.subtitle {
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+   ========================================================= */
+
+.section-label {
+    margin-bottom: 11px;
+
+    color: var(--maroon-600);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.6px;
+}
+
+
+/* =========================================================
+   DIFFICULTY
+   ========================================================= */
+
+.difficulty-section {
+    margin-bottom: 22px;
+}
+
+.difficulty {
+    display: flex;
+
+    gap: 8px;
+}
+
+.difficulty-btn {
+    min-width: 95px;
+
+    padding: 11px 18px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    color: var(--text-2);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+.difficulty-btn:hover {
+    border-color: var(--maroon-400);
+
+    color: var(--maroon-700);
+
+    background: var(--maroon-soft);
+
+    transform: translateY(-1px);
+}
+
+.difficulty-btn.active {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--maroon-800),
+            var(--maroon-600)
+        );
+
+    border-color: var(--maroon-700);
+
+    box-shadow:
+        0 7px 18px rgba(111, 41, 56, 0.18);
+}
+
+
+/* =========================================================
+   STATUS AREA
+   ========================================================= */
+
+.status-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+.status-card {
+    min-height: 86px;
+
+    padding: 15px 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    border-radius: 14px;
+
+    background: var(--surface-2);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.status-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: var(--maroon-soft);
+
+    font-size: 19px;
+}
+
+.status-card p {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+}
+
+.status-card strong {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--maroon-800);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 24px;
+}
+
+.status-card small {
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   TIMER
+   ========================================================= */
+
+.timer-wrapper {
+    margin: 3px 0 23px;
+}
+
+.timer-bar {
+    width: 100%;
+
+    height: 5px;
+
+    background: #eadfe1;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.timer-progress {
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--maroon-700),
+            var(--maroon-400)
+        );
+
+    border-radius: inherit;
+
+    transition: width 1s linear;
+}
+
+
+/* =========================================================
+   MAIN CONTENT AREA
+   ========================================================= */
+
+.game-content {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(300px, 0.65fr);
+
+    gap: 35px;
+
+    padding: 38px 45px;
+}
+
+
+/* =========================================================
+   CODE SECTION
+   ========================================================= */
+
+.code-section {
+    padding: 28px 0 24px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.code-section::before {
+    content: "ENTER SECURITY CODE";
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--maroon-600);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   CODE INPUT
+   ========================================================= */
+
+.code-input {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 23px 0;
+}
+
+.code-input input {
+    width: 88px;
+    height: 100px;
+
+    border: 1px solid var(--maroon-border);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fbf5f6
+        );
+
+    color: var(--maroon-800);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    outline: none;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.9),
+        var(--shadow-sm);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.code-input input:hover {
+    border-color: var(--maroon-400);
+}
+
+.code-input input:focus {
+    border-color: var(--maroon-600);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(157, 74, 89, 0.10),
+        0 12px 25px rgba(66, 27, 36, 0.10);
+
+    transform: translateY(-3px);
+}
+
+.input-separator {
+    color: #bcaeb2;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CRACK BUTTON
+   ========================================================= */
+
+.crack-btn {
+    width: 100%;
+
+    min-height: 56px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--maroon-900),
+            var(--maroon-700)
+        );
+
+    color: #ffffff;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(66, 27, 36, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.crack-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(66, 27, 36, 0.25);
+}
+
+.crack-btn:active {
+    transform: translateY(0);
+}
+
+.button-icon {
+    margin-right: 7px;
+}
+
+
+/* =========================================================
+   HINT PANEL
+   ========================================================= */
+
+.hint-panel {
+    height: fit-content;
+
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fbf6f7,
+            #f5e9ec
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.hint-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-bottom: 17px;
+
+    margin-bottom: 14px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.hint-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 11px;
+
+    background: var(--maroon-soft);
+
+    font-size: 19px;
+}
+
+.hint-header h2 {
+    color: var(--maroon-800);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 14px;
+}
+
+.hint-header p {
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   HINT RESULTS
+   ========================================================= */
+
+.hint-results {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.hint-result {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 13px;
+
+    border-radius: 11px;
+
+    background: rgba(255,255,255,0.75);
+
+    border: 1px solid var(--border);
+}
+
+.result-symbol {
+    width: 29px;
+    height: 29px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 8px;
+
+    background: var(--surface-3);
+
+    font-size: 15px;
+}
+
+.hint-result span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.hint-result strong {
+    display: block;
+
+    margin-top: 2px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 17px;
+}
+
+.green-result strong {
+    color: var(--green);
+}
+
+.yellow-result strong {
+    color: var(--yellow);
+}
+
+
+/* =========================================================
+   ANALYSIS MESSAGE
+   ========================================================= */
+
+.analysis-message {
+    margin-top: 12px;
+
+    padding: 13px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-left: 3px solid var(--maroon-500);
+
+    border-radius: 9px;
+
+    color: var(--text-2);
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   GAME MESSAGE
+   ========================================================= */
+
+.game-message {
+    min-height: 22px;
+
+    margin-top: 13px;
+
+    text-align: center;
+
+    color: var(--maroon-700);
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    min-height: 54px;
+
+    padding: 14px 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    border-top: 1px solid var(--border);
+
+    background: #fbf7f8;
+
+    color: var(--muted);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+.creator {
+    color: var(--maroon-700);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+   ========================================================= */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(36, 23, 27, 0.45);
+
+    backdrop-filter: blur(9px);
+}
+
+
+/* =========================================================
+   RESULT MODAL
+   ========================================================= */
+
+.result-modal {
+    width: min(430px, 100%);
+
+    padding: 34px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 30px 80px rgba(36, 23, 27, 0.20);
+
+    text-align: center;
+}
+
+.result-icon {
+    width: 64px;
+    height: 64px;
+
+    margin: 0 auto 16px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 18px;
+
+    background: var(--maroon-soft);
+
+    font-size: 30px;
+}
+
+.result-modal h2 {
+    color: var(--maroon-800);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 24px;
+}
+
+.result-modal p {
+    margin-top: 8px;
+
+    color: var(--text-2);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+.secret-display {
+    margin: 23px 0;
+
+    padding: 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    background: var(--surface-2);
+}
+
+.secret-display span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.secret-display strong {
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--maroon-700);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 32px;
+
+    letter-spacing: 7px;
+}
+
+.play-again-btn {
+    width: 100%;
+
+    min-height: 52px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--maroon-800),
+            var(--maroon-600)
+        );
+
+    color: white;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.play-again-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(66, 27, 36, 0.18);
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+    .game-container {
+        min-height: calc(100vh - 56px);
+    }
+
+    .game-content {
+        align-items: center;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 18px;
+    }
+
+    .game-container {
+        min-height: auto;
+
+        border-radius: 22px;
+    }
+
+    .game-header {
+        padding: 25px;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .game-content {
+        grid-template-columns: 1fr;
+
+        padding: 30px;
+    }
+
+    .hint-panel {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 8px;
+    }
+
+    .game-container {
+        width: 100%;
+
+        min-height: calc(100vh - 16px);
+
+        border-radius: 18px;
+    }
+
+    .game-header {
+        padding: 22px 16px;
+    }
+
+    .lock-icon {
+        width: 46px;
+        height: 46px;
+
+        font-size: 21px;
+    }
+
+    .game-header h1 {
+        font-size: 27px;
+
+        letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+        font-size: 11px;
+    }
+
+    .difficulty {
+        width: 100%;
+
+        gap: 6px;
+    }
+
+    .difficulty-btn {
+        min-width: 0;
+
+        width: 100%;
+
+        padding: 10px 5px;
+
+        font-size: 10px;
+    }
+
+    .game-content {
+        padding: 22px 16px;
+
+        gap: 22px;
+    }
+
+    .status-grid {
+        gap: 8px;
+    }
+
+    .status-card {
+        min-height: 76px;
+
+        padding: 12px;
+
+        gap: 9px;
+    }
+
+    .status-icon {
+        width: 34px;
+        height: 34px;
+
+        font-size: 16px;
+    }
+
+    .status-card p {
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+    .status-card strong {
+        font-size: 20px;
+    }
+
+    .status-card small {
+        font-size: 8px;
+    }
+
+    .code-section {
+        padding: 22px 0;
+    }
+
+    .code-input {
+        gap: 8px;
+
+        margin: 20px 0;
+    }
+
+    .code-input input {
+        width: clamp(60px, 20vw, 78px);
+
+        height: clamp(70px, 23vw, 86px);
+
+        font-size: clamp(29px, 9vw, 38px);
+
+        border-radius: 13px;
+    }
+
+    .input-separator {
+        font-size: 17px;
+    }
+
+    .hint-panel {
+        padding: 18px;
+    }
+
+    footer {
+        font-size: 8px;
+
+        padding: 13px 10px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .game-header h1 {
+        font-size: 23px;
+    }
+
+    .game-content {
+        padding: 18px 12px;
+    }
+
+    .code-input {
+        gap: 5px;
+    }
+
+    .code-input input {
+        width: 56px;
+        height: 66px;
+
+        font-size: 27px;
+    }
+
+    .status-card {
+        padding: 10px;
+    }
+
+    .status-card strong {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    body {
+        padding: 8px;
+    }
+
+    .game-container {
+        min-height: auto;
+    }
+
+    .game-header {
+        padding: 18px;
+    }
+
+    .game-content {
+        padding: 20px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button,
+input {
+    font-family: inherit;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid rgba(157, 74, 89, 0.18);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   PREVENT OVERFLOW
+   ========================================================= */
+
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+
+.game-container,
+.game-content,
+.game-header {
+    max-width: 100%;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+/* =========================================================
+   FINAL FONT + DIFFICULTY ALIGNMENT
+   ========================================================= */
+
+/* Difficulty section center */
+.difficulty-section {
+    text-align: center;
+}
+
+.difficulty {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+/* Difficulty buttons thode bade */
+.difficulty-btn {
+    font-size: 13px;
+    padding: 12px 24px;
+}
+
+
+/* Main section labels */
+.section-label {
+    font-size: 12px;
+}
+
+
+/* Header subtitle */
+.subtitle {
+    font-size: 15px;
+}
+
+
+/* Status labels */
+.status-card p {
+    font-size: 11px;
+}
+
+
+/* Status main values */
+.status-card strong {
+    font-size: 28px;
+}
+
+
+/* Status small text */
+.status-card small {
+    font-size: 11px;
+}
+
+
+/* Code section */
+.code-section::before {
+    font-size: 11px;
+}
+
+.code-section p {
+    font-size: 15px;
+}
+
+
+/* Code input numbers */
+.code-input input {
+    font-size: 45px;
+}
+
+
+/* Crack button */
+.crack-btn {
+    font-size: 15px;
+}
+
+
+/* Hint heading */
+.hint-header h2 {
+    font-size: 17px;
+}
+
+
+/* Hint description */
+.hint-header p {
+    font-size: 12px;
+}
+
+
+/* Hint labels */
+.hint-result span {
+    font-size: 10px;
+}
+
+
+/* Hint values */
+.hint-result strong {
+    font-size: 20px;
+}
+
+
+/* Analysis message */
+.analysis-message {
+    font-size: 12px;
+}
+
+
+/* Game message */
+.game-message {
+    font-size: 14px;
+}
+
+
+/* Footer */
+footer {
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .difficulty {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .difficulty-btn {
+        font-size: 12px;
+        padding: 11px 8px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .status-card p {
+        font-size: 9px;
+    }
+
+    .status-card strong {
+        font-size: 23px;
+    }
+
+    .status-card small {
+        font-size: 9px;
+    }
+
+    .code-section::before {
+        font-size: 10px;
+    }
+
+    .code-section p {
+        font-size: 13px;
+    }
+
+    .code-input input {
+        font-size: 34px;
+    }
+
+    .crack-btn {
+        font-size: 14px;
+    }
+
+    .hint-header h2 {
+        font-size: 15px;
+    }
+
+    .hint-header p {
+        font-size: 11px;
+    }
+
+    .hint-result span {
+        font-size: 9px;
+    }
+
+    .hint-result strong {
+        font-size: 18px;
+    }
+
+    .analysis-message {
+        font-size: 11px;
+    }
+
+    .game-message {
+        font-size: 12px;
+    }
+}
